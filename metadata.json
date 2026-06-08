@@ -1,0 +1,36 @@
+{
+  "name": "puppet-proxmox",
+  "version": "0.1.0",
+  "author": "mlibrary",
+  "summary": "Configures Proxmox VE",
+  "license": "BSD-3-Clause",
+  "source": "https://github.com/mlibrary/puppet-proxmox",
+  "project_page": "https://github.com/mlibrary/puppet-proxmox",
+  "issues_url": "https://github.com/mlibrary/puppet-proxmox/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 10.0.0 < 11.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 9.0.0 < 10.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "12",
+        "13"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "openvox",
+      "version_requirement": ">= 8.0.0 < 9.0.0"
+    }
+  ],
+  "description": "Proxmox VE Module"
+}
