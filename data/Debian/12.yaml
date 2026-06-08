@@ -1,0 +1,2 @@
+---
+proxmox::ceph_release: squid
