@@ -1,12 +1,12 @@
 class proxmox (
   String $debian_mirror = 'http://deb.debian.org/debian',
-  Enum['pve-test', 'pve-no-subscription', 'pve-enterprise'] $pve_repo = 'pve-no-subscription',
+  Enum['test', 'no-subscription', 'enterprise'] $pve_repo = 'no-subscription',
   Optional[Enum['reef','squid','tentacle']] $ceph_release = undef,
   Boolean $configure_ceph = true,
   Boolean $remove_subscription_nag = true,
 ) {
   $pve_url_base = $pve_repo ? {
-    'pve-enterprise' => 'https://enterprise.proxmox.com/debian',
+    'enterprise' => 'https://enterprise.proxmox.com/debian',
     default => 'http://download.proxmox.com/debian'
   }
 
@@ -32,7 +32,7 @@ class proxmox (
   apt::source { 'proxmox':
     source_format => 'sources',
     keyring       => '/usr/share/keyrings/proxmox-archive-keyring.gpg',
-    repos         => [$pve_repo],
+    repos         => ["pve-${pve_repo}"],
     location      => ["${pve_url_base}/pve"],
   }
 
