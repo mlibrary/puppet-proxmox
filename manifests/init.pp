@@ -1,3 +1,15 @@
+# @summary Configures Proxmox VE
+#
+# @param debian_mirror
+#   Debian apt mirror URL
+# @param pve_repo
+#   Proxmox VE repository type: test, no-subscription, or enterprise (default: no-subscription)
+# @param ceph_release
+#   Pin a Ceph release. If unset, we use the current default version for your Proxmox version.
+# @param configure_ceph
+#   Whether to configure the Ceph apt source.
+# @param remove_subscription_nag
+#   Whether to remove Proxmox subscription nag.
 class proxmox (
   String $debian_mirror = 'http://deb.debian.org/debian',
   Enum['test', 'no-subscription', 'enterprise'] $pve_repo = 'no-subscription',
